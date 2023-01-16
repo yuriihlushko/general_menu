@@ -39,11 +39,18 @@ table {
 }
 body{
 	background: #e2effa;
+	height: 100%;
+}
+html{
+	height: 100%;
 }
 .wrapper{
 	width: 1200px;
 	margin: 0 auto;
-	text-align: center;
+	min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;	
 }
 .general-menu{
 	font-size: 0;
@@ -62,12 +69,9 @@ li{
 .general-menu>li>a, .general-menu>li>span{
 	font-size: 30px;
 }
-.general-menu>li>a:hover, .general-menu>li>span:hover{
+.general-menu>li:hover, .general-menu>li:hover{
 	background: #9fae8a;
 	border-radius: 14px;
-}
-.general-menu>li{
-	min-width: 180px;
 }
 li>a, li>span{
 	color: #393636;
@@ -78,6 +82,22 @@ li>a, li>span{
 	display: block;
 	padding: 2px 5px;
 	cursor: pointer;
+	position: relative;
+}
+#fl>span:after{
+	content: "";
+	position: absolute;
+	right: 2px;
+	top: 3px;
+	width: 20px;
+	height: 20px;
+	background: url('../img/sprite/icons.png');
+	background-position: 0 0;
+}
+.gen-first, .gen-second{
+	padding: 2px 16px 2px 47px;
+	position: relative;
+
 }
 .general-menu>li{
 	border-left: solid 2px #393636;
@@ -90,6 +110,9 @@ li>a, li>span{
 .general-menu>li:last-child{
 	border-right: none;
 }
+/*.general-menu>li:hover .gen-last{
+	background: #9fae8a;
+}*/
 .pos{
 	visibility: hidden;
 	position: absolute;
@@ -97,11 +120,51 @@ li>a, li>span{
 	left: 0;
 	z-index: 20;
 }
+/*.gen-first, .gen-second{
+	padding-left: 15px;
+	position: relative;
+}*/
+.gen-last{
+	padding:2px 25px 2px 13px;
+	position: relative;
+}
+.gen-first:before, .gen-second:before{
+	position: absolute;
+	content: "";
+	width: 30px;
+	height: 30px;
+	left: 6px;
+	top: 6px;
+	background: url('../img/sprite/icons.png');
+	background-position: -190px 0;
+}
+.gen-second:before{
+	background-position: -160px 0;
+	left: 8px;
+	top: 6px;
+}
+.gen-last:after{
+	position: absolute;
+	content: "";
+	width: 30px;
+	height: 30px;
+	right: -6px;
+	top: 4px;
+	background: url('../img/sprite/icons.png');
+	background-position: -42px 0;
+}
+/*li.relative:hover 
+.gen-last{
+
+}*/
 .relative{
 	position: relative;
 }
-.general-menu>li:last-child:hover .pos{
+.general-menu>li:hover .pos{
 	visibility: visible;
+}
+.general-menu>li:hover .gen-last:after{
+	background-position: -72px 0;
 }
 .pos li{
 	border: solid 2px #393636;
@@ -112,6 +175,9 @@ li>a, li>span{
 }
 .pos li:hover{
 	background: #9fae8a;
+}
+.pos li:hover#fl>span:after{
+	background-position: -20px 0;
 }
 .fl{
 	visibility: hidden;
@@ -136,16 +202,29 @@ li>a, li>span{
 #gr:hover .gr{
 	visibility: visible;
 }
+#gr>span:before{
+	content: "";
+	position: absolute;
+	left: 1px;
+	top: 4px;
+	width: 20px;
+	height: 20px;
+	background: url('../img/sprite/icons.png');
+	background-position: -20px 0;	
+}
+.pos li:hover#gr>span:before{
+    background-position: 0 0;
+}
 .gr li{
 	margin: 10px 10px 0;
 }
 h1{
-	text-align: center;
 	font-size: 60px;
 	color: #393636;
 	font-family: fantasy;
 	margin-top: 170px;
 	text-transform: uppercase;
+	flex: 1 1 auto;
 }
 .burn .wrapper{
 	width: 1200px;
@@ -669,4 +748,82 @@ h1{
 .in_wraper19{
 	background: #FFFF51;
 	grid-area: s;
+}
+
+/*социальное меню*/
+
+.socmenu{
+	font-size: 0;
+	text-align: center;
+}
+.socmenu>li{
+	display: inline-block;
+	min-width: 100px;
+	border: 2px solid #393636;
+	border-radius: 10px;
+	margin: 0 20px;
+	background: #9fae8a;
+}
+.socmenu>li>a{
+	display: block;
+	padding: 4px 6px 5px 40px;
+	font-size: 20px;
+	text-decoration: none;
+	font-family: ;
+	color: #393636;
+	position: relative;
+}
+.socmenu>li>a:before {
+	content: "";
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 4px;
+	top: 2px;
+	background-image: url('../img/sprite/icons.png');
+}
+.socmenu .instagram:before{
+	background-position: -220px 0 ;
+}
+.instagram:hover.instagram:before{
+	background-position: -250px 0 ;
+}
+.instagram:hover.instagram{
+	color: #cc3c2c;
+}
+.socmenu .facebook:before{
+	background-position: -100px 0 ;
+}
+.facebook:hover.facebook:before{
+	background-position: -130px 0 ;
+}
+.facebook:hover.facebook{
+	color: #fdfef9;
+}
+.socmenu .pinterest:before{
+	background-position: -280px 0 ;
+}
+.pinterest:hover.pinterest:before{
+	background-position: -310px 0 ;
+}
+.pinterest:hover.pinterest{
+	color: #cc3c2c;
+}
+.socmenu .twitter:before{
+	background-position: -340px 0 ;
+}
+.twitter:hover.twitter:before{
+	background-position: -370px 0 ;	
+}
+.twitter:hover.twitter{
+	color: #fdfef9;
+}
+.socmenu .youtube:before{
+	background-position: -400px 0 ;
+}
+.youtube:hover.youtube:before{
+	background-position: -430px 0 ;
+}
+.youtube:hover.youtube{
+	color: #cc3c2c;
 }
