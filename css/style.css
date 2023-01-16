@@ -134,14 +134,14 @@ li>a, li>span{
 	width: 30px;
 	height: 30px;
 	left: 6px;
-	top: 6px;
+	top: 4px;
 	background: url('../img/sprite/icons.png');
 	background-position: -190px 0;
 }
 .gen-second:before{
 	background-position: -160px 0;
 	left: 8px;
-	top: 6px;
+	top: 4px;
 }
 .gen-last:after{
 	position: absolute;
