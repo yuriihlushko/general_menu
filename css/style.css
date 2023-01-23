@@ -257,11 +257,11 @@ li>a{
 	z-index: 20;
 }
 .fl li{
-	margin: -136px 0px 66px 10px;
+	margin: -136px 0px 66px 50px;
 	transition: margin .1s ease-in;
 }
 .fl li+li{
-	margin: 300px 0 0 10px;
+	margin: 300px 0 0 50px;
 	transition: margin .1s ease-in;
 }
 .float:hover .fl li{
