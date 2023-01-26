@@ -841,78 +841,148 @@ h1{
 
 /*социальное меню*/
 
-.socmenu{
+.fixed{
+	position: fixed;
+	top: 50%;
+	right: -171px;
+	transform: translate(0, -50%);
+	display: inline-block;
 	font-size: 0;
-	text-align: center;
+	width: 200px;
+	transition: right .5s ease-out;
+
+}
+.fixed:hover{
+	right: -21px;
+}
+.fixed:hover .hover-me{
+	transform: rotateY(90deg);
+	transition: transform 2s linear;
+	animation: none;
+}
+.hover-me{
+	display: inline-flex;
+	flex-direction: column-reverse;
+	justify-content: center;
+	line-height: 1;
+	padding: 0 5px;
+	height: 200px;
+	border: solid 2px #393636;
+	background: #f0f8ff;
+	position: relative;
+	transition: transform 1s linear;
+	animation: hover-me 4s linear 10s infinite;
+}
+@keyframes hover-me {
+	0%{
+		transform: rotate(3deg);
+	}
+	2%{
+		transform: rotate(-3deg);
+	}
+	4%{
+		transform: rotate(3deg);
+	}
+	6%{
+		transform: rotate(-3deg);
+	}
+	8%{
+		transform: rotate(3deg);
+	}
+	10%{
+		transform: rotate(-3deg);
+	}
+	11%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(0deg);
+	}
+}
+.hover-me>span{
+	display: block;
+	font-size: 20px;
+	color: #393636;
+	text-transform: uppercase;
+	font-family: fantasy;
+	transform: rotate(-90deg);
+}
+.socmenu{
+	display: inline-grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+	vertical-align: bottom;
+	font-size: 0;
+	transform: rotate(45deg);
+}
+.soc-wrap{
+	display: inline-block;
+    vertical-align: bottom;
+    position: relative;
+    top: -48px;
+    left: 24px;
+    transform: rotateY(90deg) rotateX(90deg) rotateZ(45deg);
+    transform-origin: 120% 0 0;
+    transition: transform 1s linear, transform-origin 1s linear;
+}
+.fixed:hover .soc-wrap{
+	transform: rotateY(0deg);
+    transform-origin: 0% 0 0;
+    transition: all 1s linear;
 }
 .socmenu>li{
 	display: inline-block;
-	min-width: 100px;
-	border: 2px solid #393636;
-	border-radius: 10px;
-	margin: 0 20px;
-	background: #9fae8a;
+	background: #f0f8ff;
+	border: solid 2px #393636;
+	overflow: hidden;
+
 }
 .socmenu>li>a{
 	display: block;
-	padding: 4px 6px 5px 40px;
-	font-size: 20px;
 	text-decoration: none;
-	font-family: ;
-	color: #393636;
 	position: relative;
+	padding: 21px;
 }
-.socmenu>li>a:before {
+.socmenu>li>a:before{
 	content: "";
 	position: absolute;
-	width: 30px;
-	height: 30px;
-	left: 4px;
-	top: 2px;
-	background-image: url('../img/sprite/icons.png');
+	width: 33px;
+	height: 33px;
+	top: 5px;
+	left: 7px;
+	background-image: url(../img/sprite/sprite.png);
+	background-position: -125px -6px;
+	transform: rotate(-45deg);
+	background-repeat: no-repeat;
 }
-.socmenu .instagram:before{
-	background-position: -220px 0 ;
+.socmenu .twit>a:before{
+	background-position: -84px -6px;
 }
-.instagram:hover.instagram:before{
-	background-position: -250px 0 ;
+.socmenu .face>a:before{
+	background-position: -6px -6px;
 }
-.instagram:hover.instagram{
-	color: #cc3c2c;
+.socmenu .insta>a:before{
+	background-position: -45px -6px;
 }
-.socmenu .facebook:before{
-	background-position: -100px 0 ;
+.fixed:hover .soc-wrap .socmenu{
+	animation: soc-turn 10s linear 900ms infinite;
 }
-.facebook:hover.facebook:before{
-	background-position: -130px 0 ;
+.fixed:hover .soc-wrap .socmenu>li{
+	animation:	in-soc-turn 10s linear 900ms infinite;
 }
-.facebook:hover.facebook{
-	color: #fdfef9;
+@keyframes soc-turn {
+	0%{
+		transform: rotate(45deg);
+	}
+	100%{
+		transform: rotate(405deg);
+	}
 }
-.socmenu .pinterest:before{
-	background-position: -280px 0 ;
-}
-.pinterest:hover.pinterest:before{
-	background-position: -310px 0 ;
-}
-.pinterest:hover.pinterest{
-	color: #cc3c2c;
-}
-.socmenu .twitter:before{
-	background-position: -340px 0 ;
-}
-.twitter:hover.twitter:before{
-	background-position: -370px 0 ;	
-}
-.twitter:hover.twitter{
-	color: #fdfef9;
-}
-.socmenu .youtube:before{
-	background-position: -400px 0 ;
-}
-.youtube:hover.youtube:before{
-	background-position: -430px 0 ;
-}
-.youtube:hover.youtube{
-	color: #cc3c2c;
+@keyframes in-soc-turn {
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(-360deg);
+	}
 }
