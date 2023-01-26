@@ -37,9 +37,25 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-body{
-	background: #e2effa;
-	height: 100%;
+body:before{
+	content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(at top right, #0000 70%, #8711d5);
+    z-index: 0;
+}
+body:after{
+	content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(at top left, #0000 70%, #20e3fa);
+    z-index: 0;
 }
 html{
 	height: 100%;
@@ -64,6 +80,9 @@ html{
 	border: solid 2px #393636;
 	border-radius: 20px;
 	background: #f0f8ff;
+	position: relative;
+	z-index: 20;
+	box-shadow: 4px 10px 29px #8711d5;
 }
 .general-menu li{
 	background: #f0f8ff;
@@ -94,7 +113,7 @@ html{
 	border-radius: 14px;
 }
 .general-menu li:hover{
-	background: #9fae8a;
+	background: #c0e38f;
 }
 .gen-first, .gen-second{
 	padding: 2px 16px 2px 47px;
@@ -239,16 +258,25 @@ li>a{
 	background: url('../img/sprite/icons.png');
 	background-position: 0 0;
 }
+.fl>li+li{
+	    box-shadow: 4px 10px 29px #8711d5;
+}
+.gr>li+li{
+	    box-shadow: 4px 10px 29px #8711d5;
+}
 .grid>a:after{
 	left: 1px;
 	background-position: -20px 0;	
+}
+.grid{
+	    box-shadow: 4px 10px 29px #8711d5;
 }
 .general-menu>li:last-child:hover .pos>li>a:after{
 	width: 20px;
 	transition: width 1s ease-out .8s;
 }
 .pos li:hover{
-	background: #9fae8a;
+	background: #c0e38f;
 }
 .fl{
 	position: absolute;
@@ -285,11 +313,13 @@ li>a{
 	bottom: -2px;
 	right: 100%;
 	z-index: 20;
+
 }
 .gr li{
 	margin: 4px 10px 0;
 	width: 110px;
 	transition: all .3s linear .1s;
+
 }
 .grid:hover .gr li{
 	opacity: 1;
@@ -314,6 +344,8 @@ h1{
 	margin-top: 230px;
 	text-transform: uppercase;
 	flex: 1 1 auto;
+	position: relative;
+	z-index: 20;
 }
 .burn .wrapper{
 	width: 1200px;
@@ -850,12 +882,12 @@ h1{
 	font-size: 0;
 	width: 200px;
 	transition: right .5s ease-out;
-
+	z-index: 20;
 }
 .fixed:hover{
 	right: -21px;
 }
-.fixed:hover .hover-me{
+.fixed:focus .hover-me{
 	transform: rotateY(90deg);
 	transition: transform 2s linear;
 	animation: none;
@@ -868,6 +900,7 @@ h1{
 	padding: 0 5px;
 	height: 200px;
 	border: solid 2px #393636;
+	border-radius: 10px;
 	background: #f0f8ff;
 	position: relative;
 	transition: transform 1s linear;
@@ -934,6 +967,7 @@ h1{
 	display: inline-block;
 	background: #f0f8ff;
 	border: solid 2px #393636;
+	border-radius: 10px;
 	overflow: hidden;
 
 }
