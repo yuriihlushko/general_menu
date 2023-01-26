@@ -887,7 +887,7 @@ h1{
 .fixed:hover{
 	right: -21px;
 }
-.fixed:focus .hover-me{
+.fixed:hover .hover-me{
 	transform: rotateY(90deg);
 	transition: transform 2s linear;
 	animation: none;
