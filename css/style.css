@@ -39,27 +39,30 @@ table {
 }
 body:before{
 	content: "";
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(at top right, #0000 70%, #8711d5);
+    background-image: radial-gradient(at top right, #0000 70%, #8711d5);
     z-index: 0;
+    
 }
 body:after{
 	content: "";
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     width: 100%;
     height: 100%;
     background: radial-gradient(at top left, #0000 70%, #20e3fa);
     z-index: 0;
+    
 }
 html{
 	height: 100%;
 }
+
 .relative{
 	position: relative;
 }
@@ -341,7 +344,7 @@ h1{
 	font-size: 60px;
 	color: #393636;
 	font-family: fantasy;
-	margin-top: 230px;
+	margin-top: 380px;
 	text-transform: uppercase;
 	flex: 1 1 auto;
 	position: relative;
@@ -1019,4 +1022,45 @@ h1{
 	100%{
 		transform: rotate(-360deg);
 	}
+}
+.screen{
+	position: absolute;
+	top: 25%;
+	left: 44%;
+	z-index: 15;
+	width: 207px;
+	height: 367px;
+	border-radius: 15px;
+	transform: rotateX(66deg) rotateZ(-45deg);
+	box-shadow: -12px 11px 10px black;
+}
+.screen>img{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 207px;
+	height: 367px;
+	border-radius: 15px;
+	box-shadow: -18px 18px 16px black;
+	transition: top .5s ease-out, right .5s ease-out, box-shadow .5s ease-out;
+}
+
+.screen:hover.screen>img+img{
+	top: -25px;
+	right: -25px;
+	box-shadow: -15px 22px 20px #000000ed;
+	transition: all .5s ease-out .3s;
+}
+.screen:hover.screen>img+img+img{
+	top: -50px;
+	right: -50px;
+	box-shadow: -15px 22px 20px #000000cf;
+	transition: all .5s ease-out .2s;
+
+}
+.screen:hover.screen>img+img+img+img{
+	top: -75px;
+	right: -75px;
+	box-shadow: -15px 22px 20px #00000085;
+	transition: all .5s ease-out .1s;
 }
