@@ -356,6 +356,7 @@ h1{
 }
 .main{
 	position: relative;
+	z-index: 5;
 }
 .burn .main h1{
 	position: absolute;
@@ -426,6 +427,8 @@ h1{
 	justify-content: space-evenly;
 	align-items: center;
 	margin-top: 90px;
+	position: relative;
+	z-index: 5;
 }
 .art img, .car img, .people img{
 	max-height: 95vh;
@@ -439,12 +442,15 @@ h1{
 }
 .art>div:after, .car>div:after, .people>div:after{
 	content: "LET'S GO TO THE BURNING MAN";
-	color: 	#0000008c;
+	color: 	transparent;
+	-webkit-background-clip: text;
+	background-color: black;
+	background-image: linear-gradient(to right, #1b5ce2, #f00);
+	box-shadow: inset 0 0 11px 2px #ac4ba1;
 	text-align: center;
 	font-family: fantasy;
 	font-size: 20px;
 	width: 100%;
-	background: #ffffff85;
 	position: absolute;
 	left: 0;
 	top: calc(50% - 12px);
