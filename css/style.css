@@ -439,6 +439,7 @@ h1{
 	position: relative;
 	max-height: 95vh;
 	margin-top: 20px;
+	overflow: hidden;
 }
 .art>div:after, .car>div:after, .people>div:after{
 	content: "LET'S GO TO THE BURNING MAN";
@@ -450,9 +451,9 @@ h1{
 	text-align: center;
 	font-family: fantasy;
 	font-size: 20px;
-	width: 100%;
+	width: 106%;
 	position: absolute;
-	left: 0;
+	left: -3%;
 	top: calc(50% - 12px);
 	display: none;
 }
